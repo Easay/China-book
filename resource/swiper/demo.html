@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入需要使用的css文件 -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- 引入需要使用的js文件 -->
+    <script src="js/swiper.min.js"></script>
+    <style>
+        .swiper-container{
+            width:700px;
+            height: 400px;
+        }
+        .swiper-slide{
+            width:700px;
+            height: 400px;
+            
+        }
+        .a{
+            background:red;
+        }
+        .b{
+            background:yellow;
+        }
+        .c{
+            background:green;
+        }
+        .d{
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide a">slide 1</div>
+            <div class="swiper-slide b">slide 2</div>
+            <div class="swiper-slide c">slide 3</div>
+            <div class="swiper-slide d">slide 4</div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <script>
+        var mySwiper=new Swiper(".swiper-container",{
+             // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                clickable :true,//分页器可点击
+            },
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            loop:true,
+            autoplay:{//自动播放
+                delay:1000
+            },
+            direction:"horizontal",//轮播方方向
+            slidesPerView:3,//同一个页面显示几个滑块
+            effect:"coverflow"//slide的切换效果
+        });
+    </script>
+</body>
+</html>

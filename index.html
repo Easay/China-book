@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中华图书网</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="resource/icon/iconfont.css">
+    <link rel="stylesheet" href="icon/iconfont.css">
+    <link rel="stylesheet" href="resource/swiper/css/swiper.min.css">
+    <script type="text/javascript" src="resource/data/data.js"></script>
+    <!-- 1.引入template.js文件 -->
+    <script src="resource/js/template.js"></script>
+    <script src="resource/swiper/js/swiper.min.js"></script>
+</head>
+<body>
+    <!-- 顶部栏 start -->
+        <div class="topbar">
+            <div class="content">
+                <div class="left">
+                    <div>欢迎来到中华图书网</div>
+                    <div><a href="#">请登陆</a></div>
+                    <div><a href="#">免费注册</a></div>
+                </div>    
+                <ol class="right">
+                    <li><a href="#">购物车</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li>
+                        <div class="account"> 
+                            <a href="#">个人账户<span class="iconfont icon-jiantouarrow486"></span></a>
+                            <div class="list">
+                                <ul>
+                                    <li><a href="#">个人信息</a></li>
+                                    <li><a href="#">收货地址</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    <!-- 顶部栏 end -->
+    <!-- 搜索区 start -->
+    <div class="search">
+        <div class="content">
+            <div class="title">
+                <img src="resource/imgs/other/logo.png" alt="" class="logo">
+                <!-- <h1>中华图书网</h1> -->
+            </div>
+            <div>
+                <div class="search-box">
+                    <input type="text">
+                    <button>搜索</button>
+                </div>
+                <ul class="list">
+                    <li><a href="#">史蒂芬·霍金 /</a></li>
+                    <li><a href="#">刺杀骑士团长 /</a></li>
+                    <li><a href="#">蒙台梭利育儿全书 /</a></li>
+                    <li><a href="#">阿加莎·克里斯蒂</a></li>
+                </ul>  
+            </div>
+            <div>
+                <img src="resource/imgs/other/tip.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- 搜索区 end -->
+    <!-- 分类区 start -->
+    <div class="classify">
+        <div class="content">
+            <ul>
+                <li class="book"><a href="#">图书分类</a></li>
+                <li class="home"><a href="#">首页</a></li>
+                <li><a href="#">淘书团</a></li>
+                <li><a href="#">畅销榜</a></li>
+                <li><a href="#">新上架</a></li>
+                <li><a href="#">平台自营</a></li>
+                <li><a href="#">出版社直销</a></li>
+            </ul>
+            <div></div>
+        </div>
+    </div>
+    <!-- 分类区 end -->
+    <!-- 主内容 start -->
+   <div class="main">
+       <div class="content">
+            <div class="left">
+                <div class="type">
+                    <ul class="menu">
+                        <!-- 2.将内容放到script标签中，指定type为text/html -->
+                        <script type="text/html" id="type-menu">
+                        <li>
+                            <p>{{ title }}<span class="iconfont icon-youjiantou"></span></p>
+                            <ol>
+                                {{each list as type}}
+                                <li><a href="#">{{type.name}}</a></li>
+                                {{ /each }}
+                            </ol>
+                            <!-- 弹出框 -->
+                            <ul class="detail">  
+                                {{each list as type}}  
+                                <li>
+                                    <p>{{type.name}}</p>
+                                    <ol>
+                                        {{each type.content as text}}
+                                        <li><a href="#">{{text}}</a></li>
+                                        {{/each}}
+                                    </ol>
+                                </li>
+                                {{/each}}
+                            </ul>                           
+                        </li>
+                        </script>
+                    </ul>
+                    <div class="all">
+                        <a href="#">全部商品分类...</a>
+                    </div>
+                </div>
+                <div class="recomment">
+                    <div class="text">
+                        2020网友推荐<br> 五星好书
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <!-- 轮播图 start -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <!-- 轮播图 end -->
+                <div class="bottom">
+                    <div class="left">
+                        <div class="box">
+                            <div class="bar">
+                                <ul>
+                                    <li>猜你喜欢</li>
+                                    <li>本周精选</li>
+                                    <li>主编推荐</li>
+                                </ul>
+                            </div>
+                            <div class="black"></div>
+                            <div class="guess-like">        
+                                <div class="one">
+                                    <script type="text/html" id="guesslikeOne">
+                                    <div class="book">
+                                        <img src="resource/imgs/guessLikes/{{img}}" alt="">
+                                    </div>
+                                    <div class="space"></div>
+                                    <div class="detail">
+                                        <p>{{title}}</p>
+                                        <div class="money">
+                                            <span>￥{{newPrice}}</span><span>￥{{oldPrice}}</span>
+                                        </div>
+                                        <!-- <p>无论你是谁，来自哪儿，做着什么，你都可以向任何人提问，提问任何问题，这些问题，韩寒、李承鹏、王中磊、苏紫紫、贾樟柯、铁凝、周云蓬、高晓松、李银河、熊培云……为你回答。韩寒的一个工作室主编，所有人问所有人。</p> -->
+                                        <p>{{desc}}</p>
+                                    </div>
+                                    </script>
+                                </div>
+                                <div class="four">
+                                    <script type="text/html" id="guesslike">
+                                    <div class="item">
+                                        <div class="media-fig">
+                                            <img src="resource/imgs/guessLikes/{{img}}" alt="">
+                                        </div>
+                                        <p>{{desc}}</p>
+                                        <div class="money">
+                                            <span>￥{{newPrice}}</span><span>￥{{oldPrice}}</span>
+                                        </div>
+                                    </div>
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="selected">        
+                                <div class="one">
+                                    <script type="text/html" id="selectedOne">
+                                    <div class="book">
+                                        <img src="resource/imgs/selected/{{img}}" alt="">
+                                    </div>
+                                    <div class="space"></div>
+                                    <div class="detail">
+                                        <p>{{title}}</p>
+                                        <div class="money">
+                                            <span>￥{{newPrice}}</span><span>￥{{oldPrice}}</span>
+                                        </div>
+                                        <!-- <p>无论你是谁，来自哪儿，做着什么，你都可以向任何人提问，提问任何问题，这些问题，韩寒、李承鹏、王中磊、苏紫紫、贾樟柯、铁凝、周云蓬、高晓松、李银河、熊培云……为你回答。韩寒的一个工作室主编，所有人问所有人。</p> -->
+                                        <p>{{desc}}</p>
+                                    </div>
+                                    </script>
+                                </div>
+                                <div class="four">
+                                    <script type="text/html" id="selected">
+                                    <div class="item">
+                                        <div class="media-fig">
+                                            <img src="resource/imgs/selected/{{img}}" alt="">
+                                        </div>
+                                        <p>{{desc}}</p>
+                                        <div class="money">
+                                            <span>￥{{newPrice}}</span><span>￥{{oldPrice}}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="newRecommend">        
+                                <div class="one">
+                                    <script type="text/html" id="recommendOne">
+                                    <div class="book">
+                                        <img src="resource/imgs/recommend/{{img}}" alt="">
+                                    </div>
+                                    <div class="space"></div>
+                                    <div class="detail">
+                                        <p>{{title}}</p>
+                                        <div class="money">
+                                            <span>￥{{newPrice}}</span><span>￥{{oldPrice}}</span>
+                                        </div>
+                                        <!-- <p>无论你是谁，来自哪儿，做着什么，你都可以向任何人提问，提问任何问题，这些问题，韩寒、李承鹏、王中磊、苏紫紫、贾樟柯、铁凝、周云蓬、高晓松、李银河、熊培云……为你回答。韩寒的一个工作室主编，所有人问所有人。</p> -->
+                                        <p>{{desc}}</p>
+                                    </div>
+                                    </script>
+                                </div>
+                                <div class="four">
+                                    <script type="text/html" id="recommend">
+                                    <div class="item">
+                                        <div class="media-fig">
+                                            <img src="resource/imgs/recommend/{{img}}" alt="">
+                                        </div>
+                                        <p>{{desc}}</p>
+                                        <div class="money">
+                                            <span>￥{{newPrice}}</span><span>￥{{oldPrice}}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            <span>图书畅销榜</span><span><a href="#">更多>></a></span>
+                        </div>
+                        <div class="list">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+   </div>
+    <!-- 主内容 end -->
+</body>
+</html>
+<script type="text/javascript" src="index.js"></script>

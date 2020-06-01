@@ -1,0 +1,709 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 顶部栏 start*/
+.topbar{
+    width: 100%;
+    height: 32px;
+    background-color: #f2f2f2;
+}
+.topbar .content{
+    width: 1024px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 10px;
+}
+.topbar .content .left{
+    float: left;
+}
+.topbar .right{
+    float: right;
+}
+/* 子一级的div */
+.topbar .left > div{
+    float: left;
+    line-height: 32px;
+    margin-right: 20px;
+}
+.topbar a{
+    text-decoration: none;
+    color: #666;
+}
+.topbar a:hover{
+    color: rgb(255,0,145);
+}
+/* 内部所有li */
+.topbar .right li{
+    list-style: none;
+    display: inline-block;
+    width: 70px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+.topbar .right .account{
+    border: 1px solid #f2f2f2;
+    border-bottom: 0;
+}
+.topbar .right .account .list{
+    display: none;
+    position: relative;
+    width: 0;
+    z-index: 999;
+}
+.topbar .right .account .list ul{
+    /* float: left; */
+    /* 设置绝对定位后浮在上层 */
+    position: absolute;
+    border: 1px solid #dadada;
+    border-top-color: white;
+    left: -1px;
+    width: 70px;
+    box-sizing: border-box;
+    background-color: white;
+}
+.topbar .right .account:hover{
+    border: 1px solid #dadada;
+    background-color: white;
+    border-bottom: 0;
+}
+.topbar .right .account:hover .list{
+    display: block;
+    
+}
+/* 顶部栏 end*/
+/* 搜索区 start */
+.search{
+    width: 100%;
+}
+.search .content{
+    width: 1024px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .search .content .logo{
+    width: 200px;
+} */
+.search .content .title{
+    
+}
+.search .search-box{
+    width: 600px;
+    height:35px;
+    display: flex;
+}
+.search .search-box input{
+    border: 1px solid #f37b1d;
+    /* 拉伸因子 */
+    flex-grow: 1;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    padding-left: 15px;
+}
+.search .search-box button{
+    width: 70px;
+    border-radius: 0 20px 20px 0;
+    background-color: #f37b1d;
+    color:white;
+    font-size: 15px;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+.search .list li{
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+}
+.search .list li a{
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+}
+/* 搜索区 end */
+
+/* 分类区 start */
+.classify{
+    width: 100%;
+    border-bottom: 3px solid rgb(255,80,0);
+}
+.classify .content{
+    width: 1024px;
+    margin: 0 auto;   
+}
+.classify .content ul li{
+    float: left;
+    list-style: none;
+    height: 34px;
+    width: 110px;
+    text-align: center;
+}
+.classify .content .book{
+    width: 185px;
+    background-color: rgb(255,80,0);
+    /* color: white; */
+    
+}
+.classify .content .book a{
+    color:white;
+}
+.classify .content .home a{
+    color:rgb(255,80,0);
+    font-weight: bold;
+}
+.classify .content a:hover{
+    color:rgb(255,80,0);
+}
+.classify .content ul li a{
+    text-decoration: none;
+    color: #666;
+    line-height: 34px;   
+    font-size: 14px; 
+}
+.classify .content div{
+    clear: left;
+}
+/* 分类区 end */
+/* 主内容 start*/
+.main{
+    width: 100%;
+}
+.main .content{
+    width:1024px;
+    margin: 0 auto;
+}
+.main .left{
+    width:175px;
+    float:left;
+    /* height: 500px; */
+    /* background-color: #999; */
+}
+/* .main .right{
+    width: 800px;
+    float:right;
+
+} */
+
+/* 图书分类 */
+.main .left .type{
+    width:185px;
+    height: 550px;
+    border: 2px solid #ff5000;
+    border-top:0;
+    box-sizing: border-box;
+    position: relative;
+}
+.main .type ul.menu > li{
+    list-style: none;
+    height: 71px;
+    border-bottom: 1px solid #dedede;
+    padding: 8px 10px;
+}
+.main .type ul.menu > li:hover{
+    background-color: rgb(253, 231, 251);
+}
+.main .type ul.menu > li:hover ul.detail{
+    display: block;
+    z-index: 999;
+    background-color: white;
+}
+.main .type p{
+    color:#606060;
+    font-weight: bold;
+    padding: 6px 0;
+}
+.main .type p span{
+    float: right;
+}
+.main .type ol{
+    list-style: none;
+    /* 将对象作为弹性伸缩盒子模型显示 */
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 2;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+}
+.main .type ol li{
+    display: inline-block;
+}
+.main .type ol li a{
+    text-decoration: none;
+    color:#666;
+    font-size: 12px;
+}
+.main .type ol li a:hover{
+    color: #ff5000;
+}
+.main .type .detail{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 300%;
+    height: 550px;
+    /* background-color: wheat; */
+    border: 2px solid #ff5000;
+    border-top-width: 0;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    display: none;
+}
+.main .type .detail li{
+    list-style: none;
+    font-size: 12px;
+}
+.main .type .detail li p{
+    border-bottom: 1px solid #dedede;
+    margin-top: 10px;
+}
+.main .type .detail ol{
+    margin-left: 5px;
+}
+.main .type .detail ol li{
+    margin-right: 15px;
+
+}
+.main .type .all{
+    font-size: 11px;
+    float: right;
+    /* text-decoration: none; */
+}
+.main .type .all a{
+    text-decoration: none;
+    color: #ff5000;
+}
+
+/* 轮播图 */
+.main .content .right{
+   float: right;
+   width: 825px;
+}
+.swiper-container{
+    margin-top: 10px;
+    width: 100%;
+    /* overflow: hidden; */
+}
+.swiper-container .swiper-slide img{
+    width: 825px;
+    height: 360px;
+}
+/* 五星好评 */
+.main .content .left .recomment{
+    margin-top: 10px;
+    background: url("resource/imgs/other/star-bg.png") no-repeat;
+    width: 187px;
+    height: 240px;
+    padding-top: 60px;
+}
+.main .content .left .recomment .text{
+    width: 170px;
+    height: 50px;
+    background-color: rgb(110,99,91,0.8);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+/* 轮播图下方左侧 */
+.main .content .right .bottom{
+    width: 825px;
+    height: 422px;
+    
+    margin-top: 10px;
+}
+.main .content .right .bottom .left{
+    width: 570px;
+    height: 100%;
+    background-color: rgb(238,238,238);
+    padding: 10px;
+    box-sizing: border-box;
+}
+.main .content .right .bottom .left .box{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+.box .bar ul{
+    list-style: none;
+}
+.box .bar ul li{
+    text-decoration: none;
+    color: #666;
+    float: left;
+    /* margin-right: 20px; */
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-top: 3px solid white;
+    font-weight: bold;
+    /* margin-top: 10px; */
+}
+.box .bar ul li:first-child{
+    border-top: 3px solid #ff5000;
+    color: #ff5000;
+}
+/* .box .bar ul li:hover{
+    border-top: 3px solid #ff5000;
+    color: #ff5000;
+} */
+.box .black{
+    clear: left;
+}
+/* 猜你喜欢start */
+.box .guess-like{
+    width: 100%;
+}
+.box .guess-like .one{
+    width: 500px;
+    /* background-color: yellow; */
+    height: 160px;
+}
+.box .guess-like .book{
+    float: left;
+    padding-top: 20px;
+    padding-left: 50px;
+    width: 30%;
+}
+.box .guess-like .book img{
+    width: 80%;  
+}
+.box .guess-like .detail{
+    font-size: 13px;
+    padding-top: 20px;
+    /* background-color: yellow; */
+    height: 122px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.box .guess-like .space{
+    clear: top;
+}
+.box .guess-like .detail p:first-child{
+    font-size: 15px;
+    margin-top: 10px;
+}
+.box .guess-like .detail p:last-child{
+    margin-bottom: 8px;
+    text-indent: 2em;
+    line-height: 20px;
+    width: 300px;
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 3;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+}  
+.box .guess-like .money{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.box .guess-like .money span:first-child{
+    margin-right: 10px;
+    color: #ff5000;
+    font-size: 15px;
+}
+.box .guess-like .money span:last-child{
+    color: #666;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+/* 猜你喜欢下方四个item */
+.four{
+    margin: 5px;
+    height: 185px;  
+    display: flex;    
+    justify-content: space-between;   
+}
+.four .item{
+    width: 24%;
+    margin-top: 15px;   
+    /* background-color: yellow; */
+}
+.four .item .media-fig{
+    display: flex;
+    justify-content: center;
+}
+.four .item .media-fig img{
+    /* width: 80%; */
+    height: 110px;
+}
+.four .item p{
+    font-size: 12px;
+    /* color: #666; */
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 2;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+}
+/* 猜你喜欢end */
+
+/* 本周精选start */
+.box .selected{
+    width: 100%;
+    display: none;
+}
+.box .selected .one{
+    width: 500px;
+    /* background-color: yellow; */
+    height: 160px;
+}
+.box .selected .book{
+    float: left;
+    padding-top: 20px;
+    padding-left: 50px;
+    width: 30%;
+}
+.box .selected .book img{
+    width: 65%;  
+}
+.box .selected .detail{
+    font-size: 13px;
+    padding-top: 20px;
+    /* background-color: yellow; */
+    height: 122px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.box .selected .space{
+    clear: top;
+}
+.box .selected .detail p:first-child{
+    font-size: 15px;
+    margin-top: 10px;
+}
+.box .selected .detail p:last-child{
+    margin-bottom: 8px;
+    text-indent: 2em;
+    line-height: 20px;
+    width: 300px;
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 3;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+}  
+.box .selected .money{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.box .selected .money span:first-child{
+    margin-right: 10px;
+    color: #ff5000;
+    font-size: 15px;
+}
+.box .selected .money span:last-child{
+    color: #666;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+/* 本周精选下方四个item */
+.four{
+    margin: 5px;
+    height: 185px;  
+    display: flex;    
+    justify-content: space-between;   
+}
+.four .item{
+    width: 24%;
+    margin-top: 15px;   
+    /* background-color: yellow; */
+}
+.four .item .media-fig{
+    display: flex;
+    justify-content: center;
+}
+.four .item .media-fig img{
+    /* width: 80%; */
+    height: 110px;
+}
+.four .item p{
+    font-size: 12px;
+    /* color: #666; */
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 2;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+}
+/* 本周精选end */
+
+/* 主编推荐start */
+.box .newRecommend{
+    width: 100%;
+    display: none;
+}
+.box .newRecommend .one{
+    width: 500px;
+    /* background-color: yellow; */
+    height: 160px;
+}
+.box .newRecommend .book{
+    float: left;
+    padding-top: 20px;
+    padding-left: 50px;
+    width: 30%;
+}
+.box .newRecommend .book img{
+    width: 80%;  
+}
+.box .newRecommend .detail{
+    font-size: 13px;
+    padding-top: 20px;
+    /* background-color: yellow; */
+    height: 122px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.box .newRecommend .space{
+    clear: top;
+}
+.box .newRecommend .detail p:first-child{
+    font-size: 15px;
+    margin-top: 10px;
+}
+.box .newRecommend .detail p:last-child{
+    margin-bottom: 8px;
+    text-indent: 2em;
+    line-height: 20px;
+    width: 300px;
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 3;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+}  
+.box .newRecommend .money{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.box .newRecommend .money span:first-child{
+    margin-right: 10px;
+    color: #ff5000;
+    font-size: 15px;
+}
+.box .newRecommend .money span:last-child{
+    color: #666;
+    text-decoration: line-through;
+    font-size: 13px;
+}
+/* 主编推荐下方四个item */
+.four{
+    margin: 5px;
+    height: 185px;  
+    display: flex;    
+    justify-content: space-between;   
+}
+.four .item{
+    width: 24%;
+    margin-top: 15px;   
+    /* background-color: yellow; */
+}
+.four .item .media-fig{
+    display: flex;
+    justify-content: center;
+}
+.four .item .media-fig img{
+    /* width: 80%; */
+    height: 110px;
+}
+.four .item p{
+    font-size: 12px;
+    /* color: #666; */
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 2;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+}
+/* 主编推荐end */
+
+/* 图书畅销榜 */
+.main .content .right .bottom .right{
+    width: 255px;
+    /* background-color: tomato; */
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.main .content .right .bottom .right .title{
+    /* color: #ff5000; */
+    display: flex;
+    justify-content: space-between;
+}.main .content .right .bottom .right .title span:first-child{
+    color: #ff5000;
+    font-weight: bold;
+    font-size: 18px;
+}
+.main .content .right .bottom .right .title a{
+    text-decoration: none;
+    color: #666;
+    font-size: 13px;
+}
+.main .content .right .bottom .right .list{
+    border: 1px solid #999;
+    border-top: 3px solid #ff5000;
+    border-bottom: 0;
+    /* line-height: 20px; */
+}
+.main .content .right .bottom .right .list ul{
+    list-style: none;
+    
+}
+.li_item{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #999;  
+    cursor: pointer;
+}
+.li_item span:first-child{
+    display: -webkit-box;
+    /* 设置弹性伸缩例子中的子元素排列方式 */
+    -webkit-box-orient: vertical;
+    /* 用来限制显示的行数 */
+    -webkit-line-clamp: 1;
+    /* 将超出的部分隐藏 */
+    overflow: hidden;
+    /* 用省略号显示超出的内容 */
+    text-overflow: ellipsis;
+    font-size: 15px;
+}
+/* 主内容 end */
